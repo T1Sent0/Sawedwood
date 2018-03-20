@@ -1,0 +1,54 @@
+extends ../../components/head/head
+block title
+    | Sawedwood
+
+block main
+    include ../../components/menu/menu
+    div.slider-page.swiper-container
+        div.section.firstPage
+            div.block-info
+                div.container
+                    span Авторская мебель ручной работы
+                    div.button-container
+                        img
+                        button Заказать
+                    span 01 | 03
+            div.swiper
+        div.section.secondPage(data-anchor='secondPage')
+            div.container
+                div.card
+                    img
+                    h2
+                    span
+                div.why-me
+                    h1 Почему нас выбирают
+                    div.container-icons
+                        div.icons
+                        span.text-icons
+        div.section.thirdPage(data-anchor='thirdPage')
+            div.container-material
+                h1 Только натуральные материалы
+        div.section.fourthPage(data-anchor='fourthPage')
+            div.idial-for-container
+                div.title
+                    span Идельно для
+                        h1 бара и ресторана
+            div.swoper
+        div.section.fivthPage(data-anchor='fivthPage')
+            div.container
+                div.block-information
+                    div.content-information
+                        h1 Вернём жизнь вашей мебели
+                        span Lorem
+                        h2 Подзаголовок
+                        span Lorem
+                        h2 Подзаголовок
+                        span Lorem
+                        div.button-container
+                            img
+                            button Заказать реставрацию
+                div.continer-slider
+                    span Реставрация
+                    div.slide
+        div.section.sixthPage(data-anchor='sixthPage')
+        div.section.seventhPage(data-anchor='seventhPage')

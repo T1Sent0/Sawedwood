@@ -4,7 +4,7 @@ import Swiper from '../../components/head/swiper/dist/js/swiper.min';
 $(document).ready(function () {
     $('.slider-page').fullpage({
         menu: '#menu',
-        anchors:['secondPage', 'thirdPage', 'fourthPage', 'fivthPage', 'sixthPage', 'seventhPage', 'seventhPage', 'eighthPage'],
+        anchors:['', 'secondPage', 'thirdPage', 'fourthPage', 'fivthPage', 'sixthPage', 'seventhPage', 'eighthPage'],
         lockAnchors: false,
         // css3: true,
         sectionSelector: '.section',

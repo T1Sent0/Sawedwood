@@ -13,8 +13,22 @@ body {
     align-items: center;
   }
  .container-information {
+   text-align: center;
    background: url("./img/texture-bg-block-information.png");
    height: inherit;
    width: 45%;
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   .text-information {
+     h1 {
+       width: 50%;
+     }
+     width: 50%;
+     text-align: left;
+     button {
+       background: none;
+     }
+   }
  }
 }

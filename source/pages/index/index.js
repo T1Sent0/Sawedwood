@@ -19,6 +19,22 @@ $(document).ready(function () {
         animateAnchor: true,
     });
 
+    const button = $('.order');
+    const arrow = $('.arrow');
+
+    button.on('mouseover', function () {
+        $(this).siblings('img').toggleClass('show-arrow')
+    });
+
+    button.on('mouseout', function () {
+        $(this).siblings('img').toggleClass('show-arrow')
+    });
+
+    button.on('click', function () {
+        $('body').css({opacity: .4});
+        $('.form-container').css({display: 'flex', opacity: '1 !important'});
+    });
+
     const sliderOne = new Swiper('.slider-one', {
 
     })

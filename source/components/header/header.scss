@@ -2,12 +2,12 @@
 
 .header-content {
   position: absolute;
-  padding: 3.75rem 6.25rem;
+  padding: 3.75vmax 6.25vmax;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  z-index: 5;
+  z-index: 2;
   img {
     width: 15%;
   }

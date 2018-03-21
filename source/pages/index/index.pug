@@ -4,13 +4,18 @@ block title
 
 block main
     include ../../components/header/header
+
     div.slider-page.swiper-container
         div.section.firstPage(data-anchor='')
             div.container-slid
                 div.container-information
                     div.text-information
-                        h1 Авторская мебель ручной работы
-                        button.order Заказать
+                        span Авторская мебель ручной работы
+                        div.container-button
+                            img.arrow(src=require('./img/arrow.png'))
+                            button.order Заказать
+                    span.coutter-slider 01 | 03
+                include ../../components/form/form
                 div.slider-one.swiper-container
                     div.swiper-wrapper
                         img.swiper-slide

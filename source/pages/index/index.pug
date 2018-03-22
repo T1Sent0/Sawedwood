@@ -6,7 +6,7 @@ block main
     include ../../components/header/header
     include ../../components/form/form
     div.slider-page
-        div.section.firstPage(data-anchor='')
+        div.section.firstPage(data-anchor='')#-
             div.container-slide
                 div.container-information
                     div.text-information
@@ -18,14 +18,17 @@ block main
                         div.swiper-pagination
                 div.slider-one.swiper-container
                     div.swiper-wrapper
-                        img.swiper-slide.one-slide(src=require('./img/first-slider/first-image.jpg'))
-                        img.swiper-slide.two-slide(src=require('./img/first-slider/first-image.jpg'))
-                        img.swiper-slide.three-slide(src=require('./img/first-slider/first-image.jpg'))
+                        img.swiper-slide.one-slide(src=require('./img/first-slider/first-image.png'))
+                        img.swiper-slide.two-slide(src=require('./img/first-slider/first-image.png'))
+                        img.swiper-slide.three-slide(src=require('./img/first-slider/first-image.png'))
+                    div.nav
+                        div.swiper-button-prev.slider-one-button-prev
+                        div.swiper-button-next.slider-one-button-next
             div.arrow-bottom
-        div.section.secondPage(data-anchor='secondPage')
-        div.section.thirdPage(data-anchor='thirdPage')
-        div.section.fourthPage(data-anchor='fourthPage')
-        div.section.fivthPage(data-anchor='fivthPage')
-        div.section.sixthPage(data-anchor='sixthPage')
-        div.section.seventhPage(data-anchor='seventhPage')
-        div.section.eighthPage(data-anchor='eighthPage')
+        div.section.secondPage(data-anchor='secondPage')#secondPage
+        div.section.thirdPage(data-anchor='thirdPage')#thirdPage
+        div.section.fourthPage(data-anchor='fourthPage')#fourthPage
+        div.section.fivthPage(data-anchor='fivthPage')#fivthPage
+        div.section.sixthPage(data-anchor='sixthPage')#sixthPage
+        div.section.seventhPage(data-anchor='seventhPage')#seventhPage
+        div.section.eighthPage(data-anchor='eighthPage')#eighthPage

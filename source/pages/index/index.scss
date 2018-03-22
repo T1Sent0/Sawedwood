@@ -12,14 +12,15 @@ body {
 }
 
 .arrow-bottom {
-  width: 1.5vmax;
-  height: 1.5vmax;
-  background: #232323;
+  width: 2vmax;
+  height: 2vmax;
+  background: url("./img/arrow_downe.png") no-repeat center/cover;
   position: fixed;
-  bottom: 1vmax;
+  bottom: 2vmax;
   left: 0;
   right: 0;
   margin: auto;
+  cursor: pointer;
 }
 
 .show-arrow {
@@ -49,8 +50,8 @@ body {
    justify-content: center;
    position: relative;
    padding: 1vmax;
-   width: 50%;
    box-sizing: border-box;
+   z-index: 2;
    .text-information {
      padding: 0 0 0 10vmax;
      span {
@@ -81,10 +82,41 @@ body {
      font-size: .9vmax;
    }
  }
+
+  .swiper-container {
+    overflow: visible;
+  }
   .slider-one {
-    overflow: hidden !important;
-    img {
-      width: 2vmax;
+    position: relative;
+    width: 50%;
+    right: -5rem;
+    margin: 0;
+    .nav {
+      div {
+        width: 2vmax;
+        height: 2vmax;
+        background: url("./img/arrow_downe.png") center no-repeat #cebeba;
+        background-size: 70%;
+        &:hover {
+          background-color: #e4d5d2;
+        }
+      }
+      .slider-one-button-prev {
+        position: absolute;
+        left: 90%;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform:rotate(90deg) ;
+        transform: rotate(90deg);
+      }
+      .slider-one-button-next {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform:rotate(-90deg) ;
+        transform: rotate(-90deg);
+      }
     }
   }
 }

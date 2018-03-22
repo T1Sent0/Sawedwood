@@ -4,5 +4,17 @@
     img {
       width: 60%;
     }
+    .burger-mobile, .close {
+      display: block;
+      background-size: 100%;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: url("./img/burger.png") 50% no-repeat;
+      background-size: 100%;
+      cursor: pointer;
+    }
+    .close {
+      background: url("./img/close.png") 50% no-repeat;
+    }
   }
 }

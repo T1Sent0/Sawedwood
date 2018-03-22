@@ -1,7 +1,7 @@
 div.form-container
     div.form
         span Давайте обсудим лично
-        div.close X
+        div.close
         form(method="post")
             div.container-filed
                 div.filed
@@ -14,7 +14,8 @@ div.form-container
                     label
                         span Email
                         input(name='email')
-                    button(type='submit').order Заказать
+                    div.button-block
+                        button(type='submit').order Заказать
                 div.message
                     span.gray Добавьте ваши пожелания
                     span.fray (тип медели, размер, материал)

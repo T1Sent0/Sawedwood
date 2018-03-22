@@ -1,7 +1,7 @@
 @media (max-width: 650px) {
 
   .order {
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: .5vmax 2rem;
   }
 
@@ -9,10 +9,22 @@
     padding: 0;
     .container-slide {
       flex-flow: column-reverse;
+      overflow: hidden;
       .coutter-slider {
         display: none;
       }
       .slider-one {
+        width: 100%;
+        right: 0;
+        .nav {
+          div {
+            width: 3rem;
+            height: 3rem;
+          }
+          .slider-one-button-prev {
+            left: .5rem;
+          }
+        }
         img {
           width: 100% !important;
         }
@@ -21,12 +33,13 @@
     .container-information {
       width: 100%;
       text-align: center;
+      z-index: 1;
       .text-information {
         padding: 2rem;
         width: initial;
         text-align: center;
         span {
-          font-size: 2rem;
+          font-size: 1.8rem;
         }
         .container-button {
           position: relative;
@@ -38,12 +51,6 @@
             transition: .5s;
           }
         }
-      }
-      .coutter-slider {
-        position: absolute;
-        bottom: 1vmax;
-        right: 1vmax;
-        font-size: .9vmax;
       }
     }
   }

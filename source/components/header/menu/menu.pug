@@ -2,7 +2,7 @@ ul(class = 'menu')#menu
     each category, index in ['', 'Преимущества', 'Материал', 'Идеально для', 'Реставрация', 'Как мы работаем', 'Галерея', 'Контакты']
         if index === 0
             li.menu-item(data-menuanchor='')
-                a(href='#secondPage')=category
+                a(href='#firstPage')=category
         if index === 1
             li.menu-item(data-menuanchor='secondPage')
                 a(href='#secondPage')=category

@@ -20,14 +20,53 @@ $(document).ready(function () {
             keyboardScrolling: true,
             animateAnchor: true,
         });
+
+        const sliderOne = new Swiper('.slider-one', {
+            speed: 700,
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            initialSlide: 3,
+            loop: true,
+            spaceBetween: 0,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 300,
+                depth: 200,
+                modifier: 1.5,
+                slideShadows : true,
+            },
+            navigation: {
+                nextEl: '.slider-one-button-prev',
+                prevEl: '.slider-one-button-next',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+            },
+        })
+
+    } else {
+        const sliderOne = new Swiper('.slider-one', {
+            speed: 700,
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            initialSlide: 1,
+            loop: true,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: '.slider-one-button-prev',
+                prevEl: '.slider-one-button-next',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+            },
+        })
     }
 
-    const sliderOne = new Swiper('.slider-one', {
-        speed: 700,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'fraction',
-        },
-    })
+
 
 });

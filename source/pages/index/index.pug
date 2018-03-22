@@ -4,24 +4,24 @@ block title
 
 block main
     include ../../components/header/header
-
-    div.slider-page.swiper-container
+    include ../../components/form/form
+    div.slider-page
         div.section.firstPage(data-anchor='')
-            div.container-slid
+            div.container-slide
                 div.container-information
                     div.text-information
                         span Авторская мебель ручной работы
                         div.container-button
                             img.arrow(src=require('./img/arrow.png'))
-                            button.order Заказать
-                    span.coutter-slider 01 | 03
-                include ../../components/form/form
+                            button.order.open-form Заказать
+                    span.coutter-slider
+                        div.swiper-pagination
                 div.slider-one.swiper-container
                     div.swiper-wrapper
-                        img.swiper-slide
-                        img.swiper-slide
-                        img.swiper-slide
-
+                        img.swiper-slide.one-slide(src=require('./img/first-slider/first-image.jpg'))
+                        img.swiper-slide.two-slide(src=require('./img/first-slider/first-image.jpg'))
+                        img.swiper-slide.three-slide(src=require('./img/first-slider/first-image.jpg'))
+            div.arrow-bottom
         div.section.secondPage(data-anchor='secondPage')
         div.section.thirdPage(data-anchor='thirdPage')
         div.section.fourthPage(data-anchor='fourthPage')

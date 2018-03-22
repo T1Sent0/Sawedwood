@@ -1,4 +1,5 @@
 import 'normalize.css'
+import '../components/head/swiper/dist/css/swiper.min.css'
 import '../pages/index/index.scss'
 import '../pages/index/index-mobile.scss'
 import '../pages/index/index'

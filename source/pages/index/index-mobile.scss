@@ -1,0 +1,50 @@
+@media (max-width: 650px) {
+
+  .order {
+    font-size: 2rem;
+    padding: .5vmax 2rem;
+  }
+
+  .firstPage {
+    padding: 0;
+    .container-slide {
+      flex-flow: column-reverse;
+      .coutter-slider {
+        display: none;
+      }
+      .slider-one {
+        img {
+          width: 100% !important;
+        }
+      }
+    }
+    .container-information {
+      width: 100%;
+      text-align: center;
+      .text-information {
+        padding: 2rem;
+        width: initial;
+        text-align: center;
+        span {
+          font-size: 2rem;
+        }
+        .container-button {
+          position: relative;
+          .arrow {
+            position: absolute;
+            top: calc(50% - .25vmax);
+            left: 2vmax;
+            opacity: 1;
+            transition: .5s;
+          }
+        }
+      }
+      .coutter-slider {
+        position: absolute;
+        bottom: 1vmax;
+        right: 1vmax;
+        font-size: .9vmax;
+      }
+    }
+  }
+}

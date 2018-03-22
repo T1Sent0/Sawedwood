@@ -11,6 +11,17 @@ body {
   outline: none;
 }
 
+.arrow-bottom {
+  width: 1.5vmax;
+  height: 1.5vmax;
+  background: #232323;
+  position: fixed;
+  bottom: 1vmax;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .show-arrow {
   left: -2.7vmax !important;
   opacity: 1 !important;
@@ -21,22 +32,24 @@ body {
 }
 
 .firstPage {
-  .container-slid {
+  display: flex;
+  align-items: center;
+  .container-slide {
     height: 80%;
     display: flex;
     align-items: center;
   }
  .container-information {
    text-align: center;
-   background: url("./img/texture-bg-block-information.png");
+   background: url("./img/texture-bg-block-information.png") no-repeat;
    height: inherit;
-   width: 47%;
    display: flex;
    flex-flow: column;
    align-items: center;
    justify-content: center;
    position: relative;
    padding: 1vmax;
+   width: 50%;
    box-sizing: border-box;
    .text-information {
      padding: 0 0 0 10vmax;
@@ -59,10 +72,19 @@ body {
      }
    }
    .coutter-slider {
+     .swiper-pagination {
+       position: relative;
+     }
      position: absolute;
      bottom: 1vmax;
      right: 1vmax;
      font-size: .9vmax;
    }
  }
+  .slider-one {
+    overflow: hidden !important;
+    img {
+      width: 2vmax;
+    }
+  }
 }

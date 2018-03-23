@@ -54,4 +54,49 @@
       }
     }
   }
+
+  .secondPage {
+    flex-flow: column-reverse;
+    .container-why-me {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      span {
+        width: 50%;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+      .container-icon {
+        flex-flow: column;
+        .template {
+          margin: 0;
+        }
+        img {
+          margin-bottom: 1.8rem;
+        }
+        span {
+          width: 100%;
+          font-size: 3vmax;
+        }
+      }
+    }
+    .info-container {
+      width: 100%;
+      height: initial;
+      background: #e0e0e0;
+      margin: 0;
+      span {
+        display: none;
+      }
+      img {
+        width: 70%;
+      }
+      .title-info-container {
+        span {
+          display: block;
+          font-size: 3vmax;
+        }
+      }
+    }
+  }
 }

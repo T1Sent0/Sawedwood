@@ -15,7 +15,7 @@ body {
   width: 2vmax;
   height: 2vmax;
   background: url("./img/arrow_downe.png") no-repeat center/cover;
-  position: fixed;
+  position: absolute;
   bottom: 2vmax;
   left: 0;
   right: 0;
@@ -40,7 +40,7 @@ body {
     display: flex;
     align-items: center;
   }
- .container-information {
+  .container-information {
    text-align: center;
    background: url("./img/texture-bg-block-information.png") no-repeat;
    height: inherit;
@@ -116,6 +116,133 @@ body {
         -ms-transform: rotate(-90deg);
         -o-transform:rotate(-90deg) ;
         transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+.secondPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  .info-container {
+    width: 16%;
+    height: 100%;
+    background: white;
+    margin-right: 5vmax;
+    padding: 1.5vmax;
+    box-sizing: border-box;
+    .title-info-container {
+      padding: 1vmax;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      box-sizing: border-box;
+      img {
+        margin-bottom: 1rem;
+      }
+      span {
+        text-align: center;
+        font-size: 1.3vmax;
+      }
+    }
+    span {
+      font-size: .7vmax;
+    }
+  }
+  .container-why-me {
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    span {
+      font-size: 2vmax;
+      padding: 0 4vmax;
+    }
+    .container-icon {
+      display: flex;
+      height: 20%;
+      margin-bottom: 7vmax;
+    }
+    .template {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+      &:not(:last-child) {
+        margin-right: 2vmax;
+      }
+      img {
+        width: 100%;
+        margin-bottom: 2.5vmax;
+      }
+      span {
+        padding: 0;
+        font-size: 1vmax;
+      }
+    }
+  }
+}
+
+@media (max-width: 1930px) {
+  .firstPage {
+    .slider-one {
+      right: -7rem;
+    }
+    .container-information {
+      .coutter-slider {
+        position: absolute;
+        bottom: 2.5vmax !important;
+        right: 1vmax;
+        font-size: .9vmax;
+      }
+    }
+  }
+  .show-arrow {
+    left: -1.7vmax !important;
+  }
+}
+
+@media (max-width: 1376px) {
+  .firstPage {
+    .container-information {
+      .coutter-slider {
+        position: absolute;
+        bottom: 0vmax !important;
+        right: 1vmax;
+        font-size: .9vmax;
+      }
+    }
+    .slider-one {
+      right: -7rem;
+      .nav {
+        div {
+          width: 2vmax;
+          height: 2vmax;
+          background: url("./img/arrow_downe.png") center no-repeat #cebeba;
+          background-size: 70%;
+          &:hover {
+            background-color: #e4d5d2;
+          }
+        }
+        .slider-one-button-prev {
+          left: 85%;
+        }
+        .slider-one-button-next {
+          left: 90%;
+        }
+      }
+    }
+  }
+
+  .secondPage {
+    .info-container {
+      .title-info-container {
+        img {
+          margin: 0;
+        }
       }
     }
   }

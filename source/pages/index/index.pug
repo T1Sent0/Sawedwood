@@ -26,6 +26,23 @@ block main
                         div.swiper-button-next.slider-one-button-next
             div.arrow-bottom
         div.section.secondPage(data-anchor='secondPage')#secondPage
+            div.info-container
+                div.title-info-container
+                    img(src=require('./img/why-me/house_icon.svg'))
+                    span Собственное производство
+                span На этом самом месте должно быть описание почему мы и никто больше, очень хорошо будет если это будет кратко и по делу, без лишней воды
+            div.container-why-me
+                span Почему нас выбирают
+                div.container-icon
+                    mixin creaceCard(pathImg, textContent)
+                        div.template
+                            img(src=pathImg)
+                            span=textContent
+                    +creaceCard(require('./img/why-me/handmade.svg'), 'Ручная работа')
+                    +creaceCard(require('./img/why-me/material.svg'), 'Натуральные материалы')
+                    +creaceCard(require('./img/why-me/design.svg'), 'Индивидульный дизайн')
+                    +creaceCard(require('./img/why-me/garanty.svg'), 'Бессрочная гарантия')
+                div.arrow-bottom
         div.section.thirdPage(data-anchor='thirdPage')#thirdPage
         div.section.fourthPage(data-anchor='fourthPage')#fourthPage
         div.section.fivthPage(data-anchor='fivthPage')#fivthPage

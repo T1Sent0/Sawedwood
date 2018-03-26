@@ -12,14 +12,14 @@ $(document).ready(function () {
     const sliderIdealFor = new Swiper('.slider-two', {
         effect: 'coverflow',
         grabCursor: true,
-        centeredSlides: true,
         initialSlide: 1,
         slidesPerView: 'auto',
+        centeredSlides: true,
         spaceBetween: 100,
         coverflowEffect: {
             rotate: 0,
             stretch: 0,
-            depth: 400,
+            depth: 500,
             modifier: 1,
             slideShadows : true,
         },
@@ -41,6 +41,22 @@ $(document).ready(function () {
         navigation: {
             nextEl: '.slider-three-button-prev',
             prevEl: '.slider-three-button-next',
+        },
+    });
+
+    const sliderOne = new Swiper('.slider-one', {
+        speed: 700,
+        grabCursor: true,
+        slidesPerView: 1,
+        initialSlide: 0,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '.slider-one-button-prev',
+            prevEl: '.slider-one-button-next',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
         },
     });
 
@@ -169,32 +185,6 @@ $(document).ready(function () {
                 }
             }
 
-        });
-
-        const sliderOne = new Swiper('.slider-one', {
-            speed: 700,
-            effect: 'coverflow',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            initialSlide: 3,
-            loop: true,
-            spaceBetween: 0,
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 300,
-                depth: 200,
-                modifier: 1.5,
-                slideShadows : true,
-            },
-            navigation: {
-                nextEl: '.slider-one-button-prev',
-                prevEl: '.slider-one-button-next',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
-            },
         });
 
         const $itemHover = $('.template');

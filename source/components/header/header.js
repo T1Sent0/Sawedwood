@@ -5,7 +5,7 @@ import './menu/menu-mobile.scss'
 
 
 const burger = $('.burger-mobile');
-const menu = $('.menu');
+const menu = $('.containder-menu');
 const menuItem = $('.menu-item');
 
 burger.on('click', function () {

@@ -39,7 +39,10 @@
     "animate.css": "^3.5.2",
     "fullpage.js": "^2.9.5",
     "jquery": "^3.2.1",
+    "jquery.animate-number": "0.0.14",
     "normalize.css": "^7.0.0",
-    "parallax-js": "^3.1.0"
+    "odometer": "^0.4.8",
+    "parallax-js": "^3.1.0",
+    "typed.js": "^2.0.6"
   }
 }

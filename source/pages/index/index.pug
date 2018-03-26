@@ -26,26 +26,154 @@ block main
                         div.swiper-button-next.slider-one-button-next
             div.arrow-bottom
         div.section.secondPage(data-anchor='secondPage')#secondPage
-            div.info-container
-                div.title-info-container
-                    img(src=require('./img/why-me/house_icon.svg'))
-                    span Собственное производство
-                span На этом самом месте должно быть описание почему мы и никто больше, очень хорошо будет если это будет кратко и по делу, без лишней воды
-            div.container-why-me
-                span Почему нас выбирают
-                div.container-icon
-                    mixin creaceCard(pathImg, textContent)
-                        div.template
-                            img(src=pathImg)
-                            span=textContent
-                    +creaceCard(require('./img/why-me/handmade.svg'), 'Ручная работа')
-                    +creaceCard(require('./img/why-me/material.svg'), 'Натуральные материалы')
-                    +creaceCard(require('./img/why-me/design.svg'), 'Индивидульный дизайн')
-                    +creaceCard(require('./img/why-me/garanty.svg'), 'Бессрочная гарантия')
-                div.arrow-bottom
+            div.container-slide-page-two
+                h1 Почему нас выбирают
+                div.container-why-we
+                    mixin creaceCard(pathImg, textTitle, textContent, className)
+                        div.item
+                            div.item-pic(class=className)
+                                img(src=pathImg)
+                            div.item-text=textTitle
+                            div.item-descr=textContent
+                    +creaceCard(require('./img/why-me/house_icon.svg'), 'Собственное производство', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'one-element')
+                    +creaceCard(require('./img/why-me/handmade.svg'), 'Ручная работа', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'two-element')
+                    +creaceCard(require('./img/why-me/material.svg'), 'Натуральные материалы', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'three-element')
+                    +creaceCard(require('./img/why-me/design.svg'), 'Индивидульный дизайн', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'four-element')
+                    +creaceCard(require('./img/why-me/garanty.svg'), 'Бессрочная гарантия', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'five-element')
+            div.arrow-bottom
         div.section.thirdPage(data-anchor='thirdPage')#thirdPage
+            div.content-slide-page-three
+                div.title-slide
+                    h1 Только натуральные материалы
+                div.content-material
+                    mixin createMaterial(classname, textTitle)
+                        div.img(class=classname)
+                            span=textTitle
+                    div.first
+                        +createMaterial('korgach', 'Коргач')
+                        +createMaterial('klen', 'Клён')
+                    div.second
+                        +createMaterial('yasen', 'Ясень')
+                    div.threed
+                        +createMaterial('shelkovica', 'Щелковица')
+                    div.fourth
+                        +createMaterial('dub', 'Дуб')
+                        +createMaterial('topol', 'Тополь')
+                    div.fifth
+                        +createMaterial('oreh', 'Орех')
+            div.wrapper
+                div.full-information-material.swiper-container
+                    div.swiper-wrapper
+                        mixin createSlideMaterial (imgPaht, title, prev, next, textFirstP, textSecondP, textThreedP)
+                            div.swiper-slide
+                                div.inform
+                                    img.igm(src=imgPaht)
+                                    div.close.close-slider
+                                    span.title=title
+                                    p=textFirstP
+                                    p=textSecondP
+                                    p.last=textThreedP
+                                    div.nav
+                                        div.swiper-button-prev.slider-material-button-prev
+                                            span=prev
+                                        div.swiper-button-next.slider-material-button-next
+                                            span=next
+                                    div.container-button
+                                        img.arrow(src=require('./img/arrow.png'))
+                                        button.order.open-form Заказать
+                        +createSlideMaterial(require('./img/material/korgach.png'), 'Когач', '', 'Клён', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        )
+                        +createSlideMaterial(require('./img/material/klen.png'), 'Клён', 'Когач', 'Ясень', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        )
+                        +createSlideMaterial(require('./img/material/yasen.png'), 'Ясень', 'Клён', 'Щелковица', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        )
+                        +createSlideMaterial(require('./img/material/shelkovica.png'), 'Щелковица', 'Ясень', 'Дуб', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        )
+                        +createSlideMaterial(require('./img/material/dub.png'), 'Дуб', 'Щелковица', 'Тополь', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        )
+                        +createSlideMaterial(require('./img/material/topol.png'), 'Тополь', 'Дуб', 'Орех', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        )
+                        +createSlideMaterial(require('./img/material/oreh.png'), 'Орех', 'Тополь', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        )
+
+            div.arrow-bottom
         div.section.fourthPage(data-anchor='fourthPage')#fourthPage
+            div.wrap
+                div.container-title
+                    h1 Идеально для
+                        h1.dynamicText
+                div.slider-two.swiper-container
+                    div.swiper-wrapper
+                        img.swiper-slide(src=require('./img/bar.png'))
+                        img.swiper-slide(src=require('./img/bar.png'))
+                        img.swiper-slide(src=require('./img/bar.png'))
+                    div.nav
+                        div.swiper-button-prev.slider-two-button-prev
+                        div.swiper-button-next.slider-two-button-next
+                div.arrow-bottom
         div.section.fivthPage(data-anchor='fivthPage')#fivthPage
+            div.container-slide-five
+                div.container-information
+                    div.text-information
+                        span Вернём к жизни вашу мебель
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        h2 Lorem ipsum
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        h2 Lorem ipsum
+                        p.last Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        div.container-button
+                            img.arrow(src=require('./img/arrow.png'))
+                            button.order.open-form Заказать реставрацию
+                span.vertical Реставрация
+                div.slider-three.swiper-container
+                    div.result
+                        span До
+                        span После
+                    div.swiper-wrapper
+                        img.swiper-slide.one-slide(src=require('./img/result.png'))
+                        img.swiper-slide.two-slide(src=require('./img/result.png'))
+                        img.swiper-slide.three-slide(src=require('./img/result.png'))
+                    div.nav
+                        div.swiper-button-prev.slider-three-button-prev
+                        div.swiper-button-next.slider-three-button-next
+            div.arrow-bottom
         div.section.sixthPage(data-anchor='sixthPage')#sixthPage
+            div.container-page
+                h1 Как мы работаем
+                div.container-etap
+                   include ../../components/etaps/etapt
+                   +createEtap(require('./img/how-we-worked/1.svg'), '1.', 'Заказ')
+                   +createEtap(require('./img/how-we-worked/2.svg'), '2.', 'Согласование дизайна')
+                   +createEtap(require('./img/how-we-worked/3.svg'), '3.', 'Предоплата')
+                   +createEtap(require('./img/how-we-worked/4.svg'), '4.', 'Изготовление')
+                   +createEtap(require('./img/how-we-worked/5.svg'), '', 'Доставка')
+                include ../../components/indicators/indicators
+                div.container-indicators
+                    div.indicators-content
+                        div.flexibli
+                            +crateIndication('first-indicators', 'лет', 'Средний срок службы нашей мебели')
+                            +crateIndication('second-indicators', 'дня', 'Уходит на изготовление')
+                        div.flexibli
+                            +crateIndication('third-indicators', 'кг', 'Средний вес одного стола')
+                            +crateIndication('fourth-indicators', 'года', 'Срок полной гарантии')
+            div.arrow-bottom
         div.section.seventhPage(data-anchor='seventhPage')#seventhPage
+            include ../../components/galery/galery
+            div.arrow-bottom
         div.section.eighthPage(data-anchor='eighthPage')#eighthPage
+            include ../../components/contact/contact
+            div.arrow-bottom

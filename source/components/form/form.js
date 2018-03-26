@@ -20,7 +20,12 @@ openForm.on('mouseout', function () {
 
 openForm.on('click', function () {
     $('.slider-page, .header').css({opacity: .5});
-    $('.form-container').css({display: 'flex', opacity: 1, backgroundColor: 'rgba(237, 237, 237, 0.87)'});
+    $('.form-container').css({display: 'flex'});
+    setTimeout(function () {
+        $('.form-container').css({opacity: 1, backgroundColor: 'rgba(237, 237, 237, 0.87)', transition: 'opacity .5s'});
+        $('.form').addClass('animated fadeInUp')
+    }, 100);
+
 });
 
 closeForm.on('click', function () {

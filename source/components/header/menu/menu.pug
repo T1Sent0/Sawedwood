@@ -1,26 +1,35 @@
-ul(class = 'menu')#menu
-    each category, index in ['', 'Преимущества', 'Материал', 'Идеально для', 'Реставрация', 'Как мы работаем', 'Галерея', 'Контакты']
-        if index === 0
-            li.menu-item(data-menuanchor='')
-                a(href='#firstPage')=category
-        if index === 1
-            li.menu-item(data-menuanchor='secondPage')
-                a(href='#secondPage')=category
-        if index === 2
-            li.menu-item(data-menuanchor='thirdPage')
-                a(href='#thirdPage')=category
-        if index === 3
-            li.menu-item(data-menuanchor='fourthPage')
-                a(href='#fourthPage')=category
-        if index === 4
-            li.menu-item(data-menuanchor='fivthPage')
-                a(href='#fivthPage')=category
-        if index === 5
-            li.menu-item(data-menuanchor='sixthPage')
-                a(href='#sixthPage')=category
-        if index === 6
-            li.menu-item(data-menuanchor='seventhPage')
-                a(href='#seventhPage')=category
-        if index === 7
-            li.menu-item(data-menuanchor='eighthPage')
-                a(href='#eighthPage')=category
+div.containder-menu
+    ul(class = 'menu')#menu
+        each category, index in ['', 'Преимущества', 'Материал', 'Идеально для', 'Реставрация', 'Как мы работаем', 'Галерея', 'Контакты']
+            if index === 0
+                li.menu-item(data-menuanchor='')
+                    a(href='#firstPage')=category
+            if index === 1
+                li.menu-item(data-menuanchor='secondPage')
+                    a(href='#secondPage')=category
+            if index === 2
+                li.menu-item(data-menuanchor='thirdPage')
+                    a(href='#thirdPage')=category
+            if index === 3
+                li.menu-item(data-menuanchor='fourthPage')
+                    a(href='#fourthPage')=category
+            if index === 4
+                li.menu-item(data-menuanchor='fivthPage')
+                    a(href='#fivthPage')=category
+            if index === 5
+                li.menu-item(data-menuanchor='sixthPage')
+                    a(href='#sixthPage')=category
+            if index === 6
+                li.menu-item(data-menuanchor='seventhPage')
+                    a(href='#seventhPage')=category
+            if index === 7
+                li.menu-item(data-menuanchor='eighthPage')
+                    a(href='#eighthPage')=category
+    div.num
+        span
+            a(href='tel:89152685683') 8 (915) 268-56-83
+        span
+            a(href='tel:89157296780') 8 (915) 729-67-80
+    div.mail
+        span
+            a(href='mailto:sawedwoods@gmail.com') sawedwoods@gmail.com

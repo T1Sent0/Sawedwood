@@ -12,16 +12,16 @@ $(document).ready(function () {
     const sliderIdealFor = new Swiper('.slider-two', {
         effect: 'coverflow',
         grabCursor: true,
-        initialSlide: 1,
-        slidesPerView: 'auto',
         centeredSlides: true,
-        spaceBetween: 100,
+        slidesPerView: 'auto',
+        initialSlide: 1,
+        spaceBetween: 0,
         coverflowEffect: {
             rotate: 0,
             stretch: 0,
-            depth: 500,
+            depth: 250,
             modifier: 1,
-            slideShadows : true,
+            slideShadows : false,
         },
         navigation: {
             nextEl: '.slider-two-button-next',
@@ -29,7 +29,6 @@ $(document).ready(function () {
         },
         slideChange: function () {}
     });
-
 
     const sliderthree = new Swiper('.slider-three', {
         speed: 700,
@@ -47,7 +46,7 @@ $(document).ready(function () {
     const sliderOne = new Swiper('.slider-one', {
         speed: 700,
         grabCursor: true,
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         initialSlide: 0,
         spaceBetween: 0,
         navigation: {
@@ -91,14 +90,41 @@ $(document).ready(function () {
                         $('.content-slide-page-three').addClass('animated fadeInUp')
                     },500);
                 } if (index === 4) {
-
-                    let type;
-
-                    type = new Typed(".dynamicText", {
-                        strings: ['бара и ресторана'],
-                        typeSpeed: 40,
+                    let type = new Typed(".dynamicText", {
+                        strings: [''],
                         showCursor: false,
                     });
+
+
+
+                    if($('.dynamicText').text() && sliderIdealFor.activeIndex === 0) {
+                        type.destroy();
+                        type = new Typed(".dynamicText", {
+                            strings: ['дома и кухни'],
+                            typeSpeed: 40,
+                            showCursor: false,
+                            loop: true,
+                            loopCount: 1,
+                        });
+                    } else if ($('.dynamicText').text() && sliderIdealFor.activeIndex === 1) {
+                        type.destroy();
+                        type = new Typed(".dynamicText", {
+                            strings: ['бара и ресторана'],
+                            typeSpeed: 40,
+                            showCursor: false,
+                            loop: true,
+                            loopCount: 1,
+                        });
+                    } else if ($('.dynamicText').text() && sliderIdealFor.activeIndex === 2) {
+                        type.destroy();
+                        type = new Typed(".dynamicText", {
+                            strings: ['офиса'],
+                            typeSpeed: 40,
+                            showCursor: false,
+                            loop: true,
+                            loopCount: 1,
+                        });
+                    }
 
                     $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
                         if(sliderIdealFor.activeIndex === 0) {
@@ -109,6 +135,7 @@ $(document).ready(function () {
                                 showCursor: false,
                             })
                         }
+
                         if(sliderIdealFor.activeIndex === 1) {
                             type.destroy();
                             type = new Typed(".dynamicText", {

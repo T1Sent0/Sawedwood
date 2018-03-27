@@ -34,7 +34,8 @@ block main
                             div.item-pic(class=className)
                                 img(src=pathImg)
                             div.item-text=textTitle
-                            div.item-descr=textContent
+                            div.item-descr
+                                span=textContent
                     +creaceCard(require('./img/why-me/house_icon.svg'), 'Собственное производство', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'one-element')
                     +creaceCard(require('./img/why-me/handmade.svg'), 'Ручная работа', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'two-element')
                     +creaceCard(require('./img/why-me/material.svg'), 'Натуральные материалы', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'three-element')
@@ -109,22 +110,21 @@ block main
                         , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
                         , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
                         )
-
             div.arrow-bottom
         div.section.fourthPage(data-anchor='fourthPage')#fourthPage
             div.wrap
                 div.container-title
                     h1 Идеально для
-                        h1.dynamicText
+                        h1.dynamicText бара и ресторана
                 div.slider-two.swiper-container
                     div.swiper-wrapper
-                        img.swiper-slide(src=require('./img/bar.png'))
-                        img.swiper-slide(src=require('./img/bar.png'))
-                        img.swiper-slide(src=require('./img/bar.png'))
+                        div.swiper-slide.first-slide
+                        div.swiper-slide.second-slide
+                        div.swiper-slide.third-slide
                     div.nav
                         div.swiper-button-prev.slider-two-button-prev
                         div.swiper-button-next.slider-two-button-next
-                div.arrow-bottom
+            div.arrow-bottom
         div.section.fivthPage(data-anchor='fivthPage')#fivthPage
             div.container-slide-five
                 div.container-information

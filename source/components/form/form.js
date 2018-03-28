@@ -23,7 +23,8 @@ openForm.on('click', function () {
     $('.form-container').css({display: 'flex'});
     setTimeout(function () {
         $('.form-container').css({opacity: 1, backgroundColor: 'rgba(237, 237, 237, 0.87)', transition: 'opacity .5s'});
-        $('.form').addClass('animated fadeInUp')
+        $('.form').addClass('animated fadeInUp');
+        $('body html').scrollTop(0);
     }, 100);
 
 });

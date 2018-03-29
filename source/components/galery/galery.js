@@ -12,8 +12,8 @@ if (document.documentElement.clientWidth <= 650) {
         spaceBetween: 15,
         initialSlide: 0,
         navigation: {
-            nextEl: '.slider-galery-button-prev',
-            prevEl: '.slider-galery-button-next',
+            nextEl: '.slider-galery-button-next',
+            prevEl: '.slider-galery-button-prev',
         },
     });
 } else {
@@ -24,8 +24,8 @@ if (document.documentElement.clientWidth <= 650) {
         spaceBetween: 15,
         initialSlide: 0,
         navigation: {
-            nextEl: '.slider-galery-button-prev',
-            prevEl: '.slider-galery-button-next',
+            nextEl: '.slider-galery-button-next',
+            prevEl: '.slider-galery-button-prev',
         },
     });
 }

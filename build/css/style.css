@@ -3807,7 +3807,8 @@ template {
   font-size: 1vmax;
   padding: .5vmax 2vmax;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  letter-spacing: .1rem; }
 
 .arrow-bottom {
   width: 2vmax;
@@ -4248,6 +4249,10 @@ template {
         font-size: 1vmax; }
       .thirdPage .wrapper .inform .last {
         margin-bottom: 2rem; }
+      .thirdPage .wrapper .inform .dub {
+        left: -10rem; }
+      .thirdPage .wrapper .inform .oreh, .thirdPage .wrapper .inform .topol, .thirdPage .wrapper .inform .klen {
+        left: -8rem; }
 
 .fourthPage {
   display: -webkit-box;
@@ -4342,7 +4347,7 @@ template {
     padding: 2rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    width: 55%; }
+    width: 60%; }
     .fivthPage .container-information .text-information {
       padding: 0 0 0 10vmax;
       text-align: left; }
@@ -4487,15 +4492,19 @@ template {
       .firstPage .container-information .text-information {
         padding: 2rem;
         width: initial;
-        text-align: center; }
+        text-align: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
         .firstPage .container-information .text-information span {
-          font-size: 1.8rem; }
+          font-size: 1.8rem;
+          margin-bottom: 2rem; }
         .firstPage .container-information .text-information .container-button {
           position: relative; }
           .firstPage .container-information .text-information .container-button .arrow {
             position: absolute;
             top: calc(50% - .25vmax);
-            left: 2rem;
+            left: -2rem;
             opacity: 1;
             -webkit-transition: .5s;
             transition: .5s; }
@@ -4508,6 +4517,9 @@ template {
     padding: 7rem 1rem; }
     .secondPage .container-slide-page-two {
       opacity: 1;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: column;
       flex-flow: column; }
     .secondPage h1 {
       position: relative;
@@ -4611,26 +4623,40 @@ template {
         -ms-flex-flow: column;
         flex-flow: column; }
         .thirdPage .wrapper .swiper-slide .igm {
-          position: absolute;
-          left: 5rem;
+          position: relative;
+          left: 0;
           top: 0;
           z-index: 1; }
+        .thirdPage .wrapper .swiper-slide .nav .slider-material-button-next {
+          right: 25%;
+          top: 99%; }
+        .thirdPage .wrapper .swiper-slide .nav .slider-material-button-prev {
+          left: 25%;
+          top: 99%; }
+        .thirdPage .wrapper .swiper-slide .nav span {
+          display: none; }
       .thirdPage .wrapper .inform {
         background: white;
-        padding: 10rem 1rem 1rem 1rem;
+        padding: 2rem 1rem 3rem 1rem;
         width: 80%;
         position: relative;
-        cursor: default; }
+        cursor: default;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        .thirdPage .wrapper .inform p {
+          font-size: 2.1vmax; }
         .thirdPage .wrapper .inform .close {
           top: -2vmax; }
         .thirdPage .wrapper .inform .title {
-          background: #000;
-          padding: .2rem 1.5rem;
-          position: absolute;
-          top: -.5rem;
-          left: 7%;
-          color: white;
-          font-size: 1vmax;
+          font-size: 2vmax;
           z-index: 1; }
         .thirdPage .wrapper .inform .last {
           margin-bottom: 2rem; }
@@ -4662,6 +4688,7 @@ template {
       font-size: 3vmax; }
       .fourthPage .wrap .container-title .dynamicText {
         margin-left: 0;
+        margin-top: 0;
         text-align: center;
         font-weight: bold; }
       .fourthPage .wrap .container-title h1 {
@@ -5250,7 +5277,8 @@ ul {
       padding: .3vmax 1.5vmax;
       position: relative;
       top: .5vmax;
-      left: 2vmax;
+      left: 0;
+      width: 100%;
       font-size: 3vmax;
       z-index: 1; }
     .form-container .form {
@@ -5323,7 +5351,7 @@ ul {
           color: black;
           position: initial; }
           .form-container .container-filed .message span:nth-child(2) {
-            margin-bottom: .5vmax; } }
+            margin-bottom: 5vmax; } }
 .container-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5449,7 +5477,7 @@ ul {
           content: '';
           display: block;
           height: .1rem;
-          border-top: .1rem solid #000;
+          border-top: .02rem solid #000;
           position: absolute;
           top: 20%;
           width: calc(50%);
@@ -5458,7 +5486,7 @@ ul {
           content: '';
           display: block;
           height: .1rem;
-          border-top: .1rem solid #000;
+          border-top: .02rem solid #000;
           position: absolute;
           top: 20%;
           width: calc(50%);
@@ -5861,8 +5889,28 @@ ul {
       cursor: default; }
     .containder-contact .addres img {
       margin-right: 1.3rem; }
-  .containder-contact .social a:not(:last-child) {
-    margin-right: .5rem; }
+  .containder-contact .social {
+    will-change: transform; }
+    .containder-contact .social a:not(:last-child) {
+      margin-right: .5rem; }
+
+@-webkit-keyframes pulseSocial {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+
+@keyframes pulseSocial {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+    .containder-contact .social img:hover {
+      -webkit-animation: pulse .5s ease-in-out .1s infinite; }
   .containder-contact .map {
     width: 45%;
     height: 85%; }

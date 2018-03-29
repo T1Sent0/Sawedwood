@@ -24,7 +24,7 @@ openForm.on('click', function () {
     setTimeout(function () {
         $('.form-container').css({opacity: 1, backgroundColor: 'rgba(237, 237, 237, 0.87)', transition: 'opacity .5s'});
         $('.form').addClass('animated fadeInUp');
-        $('body html').scrollTop(0);
+        $('html, body').animate({scrollTop: 0},500);
     }, 100);
 
 });

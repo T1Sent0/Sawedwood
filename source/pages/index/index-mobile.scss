@@ -19,6 +19,7 @@
 
   .firstPage {
     padding: 0;
+    opacity: 1;
     .container-slide {
       opacity: 1;
       -webkit-box-orient: vertical;
@@ -79,6 +80,7 @@
   .secondPage {
     .container-slide-page-two {
       opacity: 1;
+      flex-flow: column;
     }
     opacity: 1;
     -webkit-box-orient: vertical;

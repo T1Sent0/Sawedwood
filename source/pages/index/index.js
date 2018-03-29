@@ -46,6 +46,7 @@ $(document).ready(function () {
     const sliderOne = new Swiper('.slider-one', {
         speed: 700,
         grabCursor: true,
+        centeredSlides: true,
         slidesPerView: 'auto',
         initialSlide: 0,
         spaceBetween: 0,
@@ -57,6 +58,7 @@ $(document).ready(function () {
             el: '.swiper-pagination',
             type: 'fraction',
         },
+        slideChange: function () {}
     });
 
     if (document.documentElement.clientWidth > 650) {
@@ -78,9 +80,107 @@ $(document).ready(function () {
 
             afterLoad: function(anchorLink, index){
                 if(index === 1){
+
+                    let typed = new Typed(".typed-text", {
+                        strings: [''],
+                        showCursor: false,
+                    });
+
+                    if($('.typed-text').text() && sliderOne.activeIndex === 0) {
+                        typed.destroy();
+                        typed = new Typed(".typed-text", {
+                            strings: ['Авторнская мебель ручной работы'],
+                            typeSpeed: 40,
+                            showCursor: false,
+                            loop: true,
+                            loopCount: 1,
+                        });
+                    } else if($('.typed-text').text() && sliderOne.activeIndex === 1) {
+                        typed.destroy();
+                        typed = new Typed(".typed-text", {
+                            strings: ['Собственное производство'],
+                            typeSpeed: 40,
+                            showCursor: false,
+                            loop: true,
+                            loopCount: 1,
+                        });
+                    } else if($('.typed-text').text() && sliderOne.activeIndex === 1) {
+                        typed.destroy();
+                        typed = new Typed(".typed-text", {
+                            strings: ['Только натуральные материалы'],
+                            typeSpeed: 40,
+                            showCursor: false,
+                            loop: true,
+                            loopCount: 1,
+                        });
+                    }
+
+
+                    $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
+                        if(sliderOne.activeIndex === 0) {
+                            typed.destroy();
+                            typed = new Typed(".typed-text", {
+                                strings: ['Авторнская мебель ручной работы'],
+                                typeSpeed: 40,
+                                showCursor: false,
+                            })
+                        }
+
+                        if(sliderOne.activeIndex === 1) {
+                            typed.destroy();
+                            typed = new Typed(".typed-text", {
+                                strings: ['Собственное производство'],
+                                typeSpeed: 40,
+                                backSpeed: 40,
+                                showCursor: false,
+                            })
+                        }
+
+                        if(sliderOne.activeIndex === 2) {
+                            typed.destroy();
+                            typed = new Typed(".typed-text", {
+                                strings: ['Только натуральные материалы'],
+                                typeSpeed: 40,
+                                showCursor: false,
+                            })
+                        }
+                    });
+
+                    sliderOne.on('slideChange', function () {
+                        if(sliderOne.activeIndex === 0) {
+                            typed.destroy();
+                            typed = new Typed(".typed-text", {
+                                strings: ['Авторнская мебель ручной работы'],
+                                typeSpeed: 40,
+                                showCursor: false,
+                            })
+                        }
+
+                        if(sliderOne.activeIndex === 1) {
+                            typed.destroy();
+                            typed = new Typed(".typed-text", {
+                                strings: ['Собственное производство'],
+                                typeSpeed: 40,
+                                backSpeed: 40,
+                                showCursor: false,
+                            })
+                        }
+
+                        if(sliderOne.activeIndex === 2) {
+                            typed.destroy();
+                            typed = new Typed(".typed-text", {
+                                strings: ['Только натуральные материалы'],
+                                typeSpeed: 40,
+                                showCursor: false,
+                            })
+                        }
+                    });
+
                     setTimeout(function() {
-                        $('.container-slide').addClass('animated fadeInUp')
-                    },1000);
+                        $('.firstPage').addClass('animated fadeInUp')
+                    },500);
+
+
                 } if (index === 2) {
                     setTimeout(function() {
                         $('.container-slide-page-two').addClass('animated fadeInUp')
@@ -260,7 +360,7 @@ $(document).ready(function () {
             },
         })
         let type;
-        let typedHome;
+        let typed;
         let typedOffice;
 
         type = new Typed(".dynamicText", {
@@ -269,6 +369,7 @@ $(document).ready(function () {
             showCursor: false,
         });
 
+       $(".typed-text").text('Авторская мебель ручной работы');
 
         $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
             if(sliderIdealFor.activeIndex === 0) {
@@ -328,6 +429,65 @@ $(document).ready(function () {
                 })
             }
         });
+
+
+        $('.slider-one-button-prev, .slider-one-button-next').on('click', function () {
+            if(sliderOne.activeIndex === 0) {
+                typed.destroy();
+                typed = new Typed(".typed-text", {
+                    strings: ['Авторская мебель ручной работы'],
+                    typeSpeed: 40,
+                    showCursor: false,
+                })
+            }
+            if(sliderOne.activeIndex === 1) {
+                typed.destroy();
+                typed = new Typed(".typed-text", {
+                    strings: ['Собственное производство'],
+                    typeSpeed: 40,
+                    backSpeed: 40,
+                    showCursor: false,
+                })
+            }
+            if(sliderOne.activeIndex === 2) {
+                typed.destroy();
+                typed = new Typed(".typed-text", {
+                    strings: ['Только натуральные материалы'],
+                    typeSpeed: 40,
+                    showCursor: false,
+                })
+            }
+        });
+
+        sliderOne.on('slideChange', function () {
+            if(sliderOne.activeIndex === 0) {
+                typed.destroy();
+                typed = new Typed(".typed-text", {
+                    strings: ['Авторская мебель ручной работы'],
+                    typeSpeed: 40,
+                    showCursor: false,
+                })
+            }
+
+            if(sliderOne.activeIndex === 1) {
+                typed.destroy();
+                typed = new Typed(".typed-text", {
+                    strings: ['Собственное производство'],
+                    typeSpeed: 40,
+                    backSpeed: 40,
+                    showCursor: false,
+                })
+            }
+
+            if(sliderOne.activeIndex === 2) {
+                typed.destroy();
+                typed = new Typed(".typed-text", {
+                    strings: ['Только натуральные материалы'],
+                    typeSpeed: 40,
+                    showCursor: false,
+                })
+            }
+        });
     }
 
     const sliderMaterial = new Swiper('.full-information-material', {
@@ -344,7 +504,9 @@ $(document).ready(function () {
         $('.thirdPage').css({background: 'white'});
         setTimeout(function () {
             $('.wrapper').css({opacity: '0', zIndex: -1});
-        }, 500)
+        }, 500);
+        $('.full-information-material').removeClass('animated fadeInUp');
+
     });
 
     $('.korgach').on('click', function () {
@@ -352,6 +514,7 @@ $(document).ready(function () {
         $('.thirdPage').css({background: 'rgba(230, 230, 230, 0.55)'});
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
+        $('.full-information-material').addClass('animated fadeInUp');
         setTimeout(function () {
         $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
@@ -364,7 +527,8 @@ $(document).ready(function () {
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
-        }, 200)
+        }, 200);
+        $('.full-information-material').addClass('animated fadeInUp');
     });
 
     $('.yasen').on('click', function () {
@@ -375,6 +539,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
+        $('.full-information-material').addClass('animated fadeInUp');
     });
 
     $('.shelkovica').on('click', function () {
@@ -385,6 +550,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
+        $('.full-information-material').addClass('animated fadeInUp');
     });
 
     $('.dub').on('click', function () {
@@ -395,6 +561,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
+        $('.full-information-material').addClass('animated fadeInUp');
     });
 
     $('.topol').on('click', function () {
@@ -405,6 +572,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
+        $('.full-information-material').addClass('animated fadeInUp');
     });
 
     $('.oreh').on('click', function () {
@@ -415,6 +583,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
+        $('.full-information-material').addClass('animated fadeInUp');
     })
 
 });

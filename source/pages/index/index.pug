@@ -10,7 +10,7 @@ block main
             div.container-slide
                 div.container-information
                     div.text-information
-                        span Авторская мебель ручной работы
+                        span.typed-text Авторская мебель ручной работы
                         div.container-button
                             img.arrow(src=require('./img/arrow.png'))
                             button.order.open-form Заказать
@@ -36,10 +36,10 @@ block main
                             div.item-text=textTitle
                             div.item-descr
                                 span=textContent
-                    +creaceCard(require('./img/why-me/house_icon.svg'), 'Собственное производство', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'one-element')
-                    +creaceCard(require('./img/why-me/handmade.svg'), 'Ручная работа', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'two-element')
-                    +creaceCard(require('./img/why-me/material.svg'), 'Натуральные материалы', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'three-element')
-                    +creaceCard(require('./img/why-me/design.svg'), 'Индивидульный дизайн', 'Вот прям на этом месте будет что то написано, коротко и по делу, меcта прям не очень много', 'four-element')
+                    +creaceCard(require('./img/why-me/house_icon.svg'), 'Собственное производство', 'Мы изготавливаем мебель с большой любовью к своему делу, убедитесь в этом сами, посетив наши мастерские, которые находятся в Москве. В них команда опытных технологов, дизайнеров и краснодеревщиков творят настоящие чудеса. Для реализации ваших идей мы используем самое современное и технологичное оборудование.', 'one-element')
+                    +creaceCard(require('./img/why-me/handmade.svg'), 'Ручная работа', 'Один из наших принципов — это индивидуальный подход к клиенту. Каждый стол создаётся вручную специально для вас. Мы не приверженцы массового производства, на изготовление одного стола наши мастера затрачивают в среднем один месяц. Только так мы можем гарантировать качество нашей продукции и учесть каждую мелочь, чтобы в конечном итоге вы получили уникальный и качественный предмет интерьера.', 'two-element')
+                    +creaceCard(require('./img/why-me/material.svg'), 'Натуральные материалы', 'Для производства мебели мы используем только массив ценных пород натуральной древесины, благодаря этому гарантируем долговечность и качество продукции. Вся мебель покрывается только натуральными маслами, обладает уникальной природной красотой, не содержит вредных веществ и создаёт благоприятный и здоровый климат в помещении.', 'three-element')
+                    +creaceCard(require('./img/why-me/design.svg'), 'Индивидульный дизайн', 'Мы любим сложные задачи и готовы реализовать любой амбициозный проект. Изготавливаем изделия любой сложности и в любых объемах, как для частных, так и для коммерческих объектов. Свяжитесь с нами, и мы качественно реализуем вашу задумку и поможем в разработке проекта.', 'four-element')
                     +creaceCard(require('./img/why-me/garanty.svg'), 'Бессрочная гарантия', 'За качество отвечаем. Мы уверены в нашей продукции и поэтому гарантируем, что у мебели будут отсутствовать материальные или производственные дефекты. Первоклассный сервис не заканчивается после покупки. Раз в год, при необходимости, наши специалисты готовы произвести гарантийное обслуживание вашего изделия- исправить возникшие в процессе эксплуатации дефекты или устранить следы естественного износа. ', 'five-element')
             div.arrow-bottom
         div.section.thirdPage(data-anchor='thirdPage')#thirdPage
@@ -51,12 +51,12 @@ block main
                         div.img(class=classname)
                             span=textTitle
                     div.first
-                        +createMaterial('korgach', 'Коргач')
+                        +createMaterial('korgach', 'Каргач')
                         +createMaterial('klen', 'Клён')
                     div.second
                         +createMaterial('yasen', 'Ясень')
                     div.threed
-                        +createMaterial('shelkovica', 'Щелковица')
+                        +createMaterial('shelkovica', 'Шелковица')
                     div.fourth
                         +createMaterial('dub', 'Дуб')
                         +createMaterial('topol', 'Тополь')
@@ -82,19 +82,20 @@ block main
                                     div.container-button
                                         img.arrow(src=require('./img/arrow.png'))
                                         button.order.open-form Заказать
-                        +createSlideMaterial(require('./img/material/korgach.png'), 'Когач', '', 'Клён', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        +createSlideMaterial(require('./img/material/korgach.png'), 'Кагач', '', 'Клён', 'Лиственное дерево, внешне схож с вязом. Произрастает в Средней Азии и Южном Урале..'
+                        , 'Карагач уникален по своим качествам и относится к полудрагоценным породам древесины, имеет тёмно- красный или коричневый оттенок. Древесина отличается плотностью, но легко обрабатывается, стойка к внешним воздействиям и не гниёт. Наряду с этим древесина плохо поддаётся шлифовке и окрашиванию. При высыхании не коробится и не трескается, а также является влагостойкой породой.'
+                        , 'Мебель из карагача, даже после обработки издаёт особый аромат, благоприятно действующий на человека, поэтому мебель из этой породы идеально подходит для дома или дачи.'
                         )
-                        +createSlideMaterial(require('./img/material/klen.png'), 'Клён', 'Когач', 'Ясень', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        +createSlideMaterial(require('./img/material/klen.png'), 'Клён', 'Кагач', 'Ясень', 'Произрастает в основном в России, Канаде и восточной части США.'
+                        , 'Преимущественно однородное строение, поздняя древесина имеет более тёмный цвет. По своим прочностным характеристикам значительно превосходит Дуб. Высокая способность удерживать крепления, на уровне твердолиственных пород дуба, ясеня и бука.' +
+                        'Благодаря прямослойности, и высокой равноплотности древесина хорошо обрабатывается, шлифуется и лакируется, однако склонна к изменению цвета с прошествием времени.'
+                        , 'Проявляет особую стабильность формы и размеров, наиболее популярное применение для изготовления столешниц для ресторанов и кафе.'
                         )
-                        +createSlideMaterial(require('./img/material/yasen.png'), 'Ясень', 'Клён', 'Щелковица', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-                        , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                        +createSlideMaterial(require('./img/material/yasen.png'), 'Ясень', 'Клён', 'Щелковица', 'Распространён в умеренном поясе Северного полушария и субтропических зонах. Имеет широкую градацию цвета.'
+                        , 'Древесина ясеня по своим характеристикам схожа с дубом. Является прочной породой с ярко выраженной текстурой и существенно превосходит дуб по стойкости к деформации и внешним воздействиям. Способность удерживать крепления значительно выше, чем у большинства пород, включая дуб. При надлежащем уходе изделия из данного материала долговечны. Древесина обязательно подвергается антисептической обработке, для защиты от влаги. При высыхании не подвержен возникновению трещин.'
+                        , 'Считается что ясень благоприятно влияет на сон человека, поэтому идеально подходит для изготовления кроватей и мебели для спальни.'
                         )
-                        +createSlideMaterial(require('./img/material/shelkovica.png'), 'Щелковица', 'Ясень', 'Дуб', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                        +createSlideMaterial(require('./img/material/shelkovica.png'), 'Шелковица', 'Ясень', 'Дуб', 'Распространена в теплом умеренном и субтропических поясах Северной Америки, Африки и Азии.'
                         , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
                         , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
                         )

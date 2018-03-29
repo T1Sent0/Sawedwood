@@ -3871,7 +3871,7 @@ template {
 .section {
   padding: 9vmax 0 5vmax; }
 
-.container-slide, .container-slide-page-two, .content-slide-page-three {
+.container-slide-page-two, .content-slide-page-three {
   opacity: 0; }
 
 .firstPage {
@@ -3880,7 +3880,10 @@ template {
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  background: url(../image/bg-first-slide.png) 47% 63% no-repeat;
+  background-size: 10%;
+  opacity: 0; }
   .firstPage .container-slide {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -3899,6 +3902,7 @@ template {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: 49%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-flow: column;
@@ -3916,13 +3920,26 @@ template {
     z-index: 2; }
     .firstPage .container-information .text-information {
       padding: 0 0 0 10vmax;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+      flex-flow: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      height: 60%;
       width: 50%;
       text-align: left; }
       .firstPage .container-information .text-information span {
         display: block;
         cursor: default;
-        font-size: 1.8vmax;
-        margin-bottom: 5vmax; }
+        font-size: 1.8vmax; }
     .firstPage .container-information .coutter-slider {
       position: absolute;
       bottom: 1vmax;
@@ -3968,7 +3985,14 @@ template {
   -ms-flex-align: center;
   align-items: center; }
   .secondPage .container-slide-page-two {
-    position: relative; }
+    position: relative;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .secondPage .container-why-we {
     position: relative;
     display: -webkit-box;
@@ -3979,14 +4003,14 @@ template {
     align-items: center;
     width: 70%;
     margin-right: auto;
-    margin-left: auto;
-    height: 400px; }
+    margin-left: auto; }
   .secondPage h1 {
-    position: relative;
+    position: absolute;
     width: 100%;
     text-align: center;
     font-size: 2vmax;
-    font-weight: 500; }
+    font-weight: 500;
+    top: 0; }
   .secondPage .item-pic {
     text-align: center;
     margin-bottom: 1rem; }
@@ -4014,15 +4038,27 @@ template {
     font-size: 1vmax;
     letter-spacing: .1vmax; }
   .secondPage .item-descr {
+    display: none;
     opacity: 0;
     margin-top: 2em;
-    font-size: .7vmax; }
+    font-size: .75vmax;
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transition-delay: .5s;
+    transition-delay: .5s; }
   .secondPage .item:hover {
     background-color: rgba(255, 255, 255, 0.67);
     -ms-flex-item-align: stretch;
     align-self: stretch;
     cursor: pointer;
     z-index: 1; }
+    .secondPage .item:hover .item-descr {
+      display: block;
+      opacity: 1;
+      -webkit-transition: .5s;
+      transition: .5s;
+      -webkit-transition-delay: .5s;
+      transition-delay: .5s; }
   .secondPage .item:hover .item-descr {
     opacity: 1; }
 
@@ -4198,7 +4234,8 @@ template {
       padding: 3rem 3rem 3rem 6rem;
       width: 40%;
       position: relative;
-      cursor: default; }
+      cursor: default;
+      font-size: 1vmax; }
       .thirdPage .wrapper .inform .close {
         top: -2vmax; }
       .thirdPage .wrapper .inform .title {
@@ -4419,7 +4456,8 @@ template {
   .firstPage, .secondPage, .thirdPage, .fourthPage, .eighthPage {
     position: relative; }
   .firstPage {
-    padding: 0; }
+    padding: 0;
+    opacity: 1; }
     .firstPage .container-slide {
       opacity: 1;
       -webkit-box-orient: vertical;
@@ -4469,7 +4507,8 @@ template {
     flex-flow: column-reverse;
     padding: 7rem 1rem; }
     .secondPage .container-slide-page-two {
-      opacity: 1; }
+      opacity: 1;
+      flex-flow: column; }
     .secondPage h1 {
       position: relative;
       top: -4rem;

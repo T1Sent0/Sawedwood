@@ -34,3 +34,50 @@ closeForm.on('click', function () {
     $('.slider-page, .header').css({opacity: 1});
     $('.form-container').css({display: 'none'});
 });
+
+
+$("input").on("checkval", function () {
+    let label = $(this).prev("label");
+    if (this.value !== "") {
+        label.addClass();
+    } else {
+        label.removeClass();
+    }
+}).on("keyup", function () {
+    $(this).trigger("checkval");
+}).on("focus", function () {
+    $(this).prev("label").addClass();
+}).on("blur", function () {
+    $(this).prev("label").removeClass();
+}).trigger("checkval");
+
+const form = $('form');
+
+$(form).submit(function () {
+    let th = $(this);
+    let data = $(this).serialize();
+    let err = false;
+
+    th.find('input[type=tel], input[type=text]').each(function () {
+        if ($(this).val() === '') {
+            $(this).addClass('error');
+            err = true;
+        }
+    });
+
+    if (!err) {
+        $.ajax({
+            type: "POST",
+            url: "./send_message.php",
+            data: data
+        }).done(function () {
+            $(form).find('label').removeClass();
+            // messageBlock.hide();
+            // $('.success').show();
+            setTimeout(showMenuAfterSendMessage, 5000);
+            $(form).trigger("reset");
+        })
+    }
+
+    return false;
+});

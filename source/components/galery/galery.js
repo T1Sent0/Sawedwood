@@ -9,7 +9,7 @@ if (document.documentElement.clientWidth <= 650) {
         speed: 700,
         grabCursor: true,
         slidesPerView: 1,
-        spaceBetween: 15,
+        spaceBetween: 5,
         initialSlide: 0,
         navigation: {
             nextEl: '.slider-galery-button-next',
@@ -21,7 +21,7 @@ if (document.documentElement.clientWidth <= 650) {
         speed: 700,
         grabCursor: true,
         slidesPerView: 3,
-        spaceBetween: 15,
+        spaceBetween: 5,
         initialSlide: 0,
         navigation: {
             nextEl: '.slider-galery-button-next',

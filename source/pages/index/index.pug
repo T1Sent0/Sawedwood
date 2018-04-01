@@ -14,13 +14,13 @@ block main
                         div.container-button
                             img.arrow(src=require('./img/arrow.png'))
                             button.order.open-form Заказать
-                    span.coutter-slider
-                        div.swiper-pagination
+                        div.coutter-slider
+                            div.swiper-pagination
                 div.slider-one.swiper-container
                     div.swiper-wrapper
-                        img.swiper-slide.one-slide(src=require('./img/first-slider/first-image.png'))
-                        img.swiper-slide.two-slide(src=require('./img/first-slider/first-image.png'))
-                        img.swiper-slide.three-slide(src=require('./img/first-slider/first-image.png'))
+                        div.swiper-slide.one-slide
+                        div.swiper-slide.two-slide
+                        div.swiper-slide.three-slide
                     div.nav
                         div.swiper-button-prev.slider-one-button-prev
                         div.swiper-button-next.slider-one-button-next
@@ -116,15 +116,15 @@ block main
             div.wrap
                 div.container-title
                     h1 Идеально для
-                        h1.dynamicText бара и ресторана
+                        h1.dynamicText
                 div.slider-two.swiper-container
                     div.swiper-wrapper
                         div.swiper-slide.first-slide
                         div.swiper-slide.second-slide
                         div.swiper-slide.third-slide
-                    div.nav
-                        div.swiper-button-prev.slider-two-button-prev
-                        div.swiper-button-next.slider-two-button-next
+                div.nav
+                    div.swiper-button-prev.slider-two-button-prev
+                    div.swiper-button-next.slider-two-button-next
             div.arrow-bottom
         div.section.fivthPage(data-anchor='fivthPage')#fivthPage
             div.container-slide-five
@@ -140,7 +140,7 @@ block main
                             img.arrow(src=require('./img/arrow.png'))
                             button.order.open-form Заказать реставрацию
                 div.wrai-img
-                    img()
+                    img(src=require('./img/result.png'))
                 //span.vertical Реставрация
                 //div.slider-three.swiper-container
                 //    div.result

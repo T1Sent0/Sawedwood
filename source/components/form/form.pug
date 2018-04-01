@@ -3,7 +3,7 @@ div.form-container
 
         span Давайте обсудим лично
         div.close
-        form(method="post")
+        form(method="post" novalidate)
             div.container-filed
                 div.success
                     div.wrap-img
@@ -14,10 +14,10 @@ div.form-container
                 div.filed
                     label
                         span Ваше имя *
-                        input(name='name' type='text')
+                        input.name(name='name' type='text' required)
                     label
                         span Телефон *
-                        input(name='phone' type='tel')
+                        input.phone(name='phone' type='tel' required)
                     label
                         span Email
                         input(name='email')

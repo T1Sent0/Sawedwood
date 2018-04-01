@@ -15,6 +15,7 @@ $(document).ready(function () {
         centeredSlides: true,
         slidesPerView: 'auto',
         initialSlide: 1,
+        loop: true,
         spaceBetween: 0,
         coverflowEffect: {
             rotate: 0,
@@ -47,7 +48,7 @@ $(document).ready(function () {
         speed: 700,
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         initialSlide: 0,
         spaceBetween: 0,
         navigation: {
@@ -60,6 +61,21 @@ $(document).ready(function () {
         },
         slideChange: function () {}
     });
+
+    let typedText = (text, counter) => {
+        let type = new Typed(".dynamicText", {
+            strings: [''],
+            showCursor: false,
+        });
+        let $slideActive = $('.slider-two > .swiper-wrapper > .swiper-slide-active').data('swiper-slide-index');
+        type.destroy();
+        if ($slideActive === counter) {
+            let type2 = new Typed(".dynamicText", {
+                strings: [text],
+                showCursor: false,
+            });
+        }
+    };
 
     if (document.documentElement.clientWidth > 650) {
         $('.slider-page').fullpage({
@@ -80,7 +96,6 @@ $(document).ready(function () {
 
             afterLoad: function(anchorLink, index){
                 if(index === 1){
-
                     if(sliderOne.activeIndex === 0) {
 
                         $('.typed-text').text('Авторская мебель ручной работы')
@@ -92,8 +107,6 @@ $(document).ready(function () {
                     } else if(sliderOne.activeIndex === 2) {
                         $('.typed-text').text('Только натуральные материалы')
                     }
-
-
                     $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
                         if(sliderOne.activeIndex === 0) {
 
@@ -107,7 +120,6 @@ $(document).ready(function () {
                             $('.typed-text').text('Только натуральные материалы')
                         }
                     });
-
                     sliderOne.on('slideChange', function () {
                         if(sliderOne.activeIndex === 0) {
 
@@ -121,124 +133,55 @@ $(document).ready(function () {
                             $('.typed-text').text('Только натуральные материалы')
                         }
                     });
-
                     setTimeout(function() {
                         $('.firstPage').addClass('animated fadeInUp')
                     },500);
-
-
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(2);
+                    });
                 } if (index === 2) {
                     setTimeout(function() {
                         $('.container-slide-page-two').addClass('animated fadeInUp')
                     },500);
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(3);
+                    });
                 } if (index === 3) {
                     setTimeout(function() {
                         $('.content-slide-page-three').addClass('animated fadeInUp')
                     },500);
-                } if (index === 4) {
-                    let type = new Typed(".dynamicText", {
-                        strings: [''],
-                        showCursor: false,
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(4);
                     });
-
-
-
-                    if($('.dynamicText').text() && sliderIdealFor.activeIndex === 0) {
-                        type.destroy();
-                        type = new Typed(".dynamicText", {
-                            strings: ['дома и кухни'],
-                            typeSpeed: 40,
-                            showCursor: false,
-                            loop: true,
-                            loopCount: 1,
-                        });
-                    } else if ($('.dynamicText').text() && sliderIdealFor.activeIndex === 1) {
-                        type.destroy();
-                        type = new Typed(".dynamicText", {
-                            strings: ['бара и ресторана'],
-                            typeSpeed: 40,
-                            showCursor: false,
-                            loop: true,
-                            loopCount: 1,
-                        });
-                    } else if ($('.dynamicText').text() && sliderIdealFor.activeIndex === 2) {
-                        type.destroy();
-                        type = new Typed(".dynamicText", {
-                            strings: ['офиса'],
-                            typeSpeed: 40,
-                            showCursor: false,
-                            loop: true,
-                            loopCount: 1,
-                        });
-                    }
+                } if (index === 4) {
+                    typedText('бара и ресторана', 1);
+                    typedText('дома и кухни', 0);
+                    typedText('офиса', 2);
 
                     $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
-                        if(sliderIdealFor.activeIndex === 0) {
-                            type.destroy();
-                            type = new Typed(".dynamicText", {
-                                strings: ['дома и кухни'],
-                                typeSpeed: 40,
-                                showCursor: false,
-                            })
-                        }
-
-                        if(sliderIdealFor.activeIndex === 1) {
-                            type.destroy();
-                            type = new Typed(".dynamicText", {
-                                strings: ['бара и ресторана'],
-                                typeSpeed: 40,
-                                backSpeed: 40,
-                                showCursor: false,
-                            })
-                        }
-
-                        if(sliderIdealFor.activeIndex === 2) {
-                            type.destroy();
-                            type = new Typed(".dynamicText", {
-                                strings: ['офиса'],
-                                typeSpeed: 40,
-                                showCursor: false,
-                            })
-                        }
+                        typedText('бара и ресторана', 1);
+                        typedText('дома и кухни', 0);
+                        typedText('офиса', 2);
                     });
 
                     sliderIdealFor.on('slideChange', function () {
-                        if(sliderIdealFor.activeIndex === 0) {
-                            type.destroy();
-                            type = new Typed(".dynamicText", {
-                                strings: ['дома и кухни'],
-                                typeSpeed: 40,
-                                showCursor: false,
-                            })
-                        }
-
-                        if(sliderIdealFor.activeIndex === 1) {
-                            type.destroy();
-                            type = new Typed(".dynamicText", {
-                                strings: ['бара и ресторана'],
-                                typeSpeed: 40,
-                                backSpeed: 40,
-                                showCursor: false,
-                            })
-                        }
-
-                        if(sliderIdealFor.activeIndex === 2) {
-                            type.destroy();
-                            type = new Typed(".dynamicText", {
-                                strings: ['офиса'],
-                                typeSpeed: 40,
-                                showCursor: false,
-                            })
-                        }
+                        typedText('бара и ресторана', 1);
+                        typedText('дома и кухни', 0);
+                        typedText('офиса', 2);
                     });
                     setTimeout(function() {
                         $('.wrap').addClass('animated fadeInUp');
                     },100);
-
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(5);
+                    });
                 } if (index === 5) {
                     setTimeout(function() {
                         $('.container-slide-five').addClass('animated fadeInUp');
                     },100);
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(6);
+                    });
                 } if (index === 6) {
                     setTimeout(function() {
                         $('.container-page').addClass('animated fadeInUp');
@@ -247,14 +190,23 @@ $(document).ready(function () {
                     $('#second-indicators').animateNumber({ number: 24 },6000);
                     $('#third-indicators').animateNumber({ number: 15 },4000);
                     $('#fourth-indicators').animateNumber({ number: 2 },4000);
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(7);
+                    });
                 } if (index === 7) {
                     setTimeout(function() {
                         $('.container-page-galery').addClass('animated fadeInUp');
                     },100);
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(8);
+                    });
                 } if (index === 8) {
                     setTimeout(function() {
                         $('.containder-contact').addClass('animated fadeInUp');
                     },100);
+                    $('.arrow-bottom').on('click', function () {
+                        $.fn.fullpage.moveTo(1);
+                    });
                 }
             }
 
@@ -310,30 +262,15 @@ $(document).ready(function () {
        $(".typed-text").text('Авторская мебель ручной работы');
 
         $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
-            if(sliderIdealFor.activeIndex === 0) {
-                $(".dynamicText").text('дома и кухни');
-            }
-            if(sliderIdealFor.activeIndex === 1) {
-                $(".dynamicText").text('бара и ресторана');
-            }
-
-            if(sliderIdealFor.activeIndex === 2) {
-                $(".dynamicText").text('офиса');
-            }
+            typedText('бара и ресторана', 1);
+            typedText('дома и кухни', 0);
+            typedText('офиса', 2);
         });
 
         sliderIdealFor.on('slideChange', function () {
-            if(sliderIdealFor.activeIndex === 0) {
-                $(".dynamicText").text('дома и кухни');
-            }
-
-            if(sliderIdealFor.activeIndex === 1) {
-                $(".dynamicText").text('бара и ресторана');
-            }
-
-            if(sliderIdealFor.activeIndex === 2) {
-                $(".dynamicText").text('офиса');
-            }
+            typedText('бара и ресторана', 1);
+            typedText('дома и кухни', 0);
+            typedText('офиса', 2);
         });
 
 

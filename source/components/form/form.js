@@ -6,14 +6,14 @@ const openForm = $('.open-form');
 const arrow = $('.arrow');
 const closeForm = $('.close');
 const messageBlock = $('.filed, .message');
+const order = $('.order');
 
-openForm.on('mouseover', function () {
+order.on('mouseover', function () {
     $(this).siblings('img').toggleClass('show-arrow')
 });
 
-openForm.on('mouseout', function () {
-    $(this).siblings('img').toggleClass('show-arrow');
-
+order.on('mouseout', function () {
+    $(this).siblings('img').toggleClass('show-arrow')
 });
 
 openForm.on('click', function () {

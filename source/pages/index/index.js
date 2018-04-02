@@ -9,6 +9,12 @@ import Typed from 'typed.js';
 
 $(document).ready(function () {
 
+    const logoSawdwood = $('.logo-sawdwood');
+
+    logoSawdwood.on('click', function () {
+        $.fn.fullpage.moveTo(1);
+    });
+
     const sliderIdealFor = new Swiper('.slider-two', {
         effect: 'coverflow',
         grabCursor: true,
@@ -16,7 +22,7 @@ $(document).ready(function () {
         slidesPerView: 'auto',
         initialSlide: 1,
         loop: true,
-        spaceBetween: 0,
+        spaceBetween: 80,
         coverflowEffect: {
             rotate: 0,
             stretch: 0,
@@ -72,6 +78,7 @@ $(document).ready(function () {
         if ($slideActive === counter) {
             let type2 = new Typed(".dynamicText", {
                 strings: [text],
+                typeSpeed: 60,
                 showCursor: false,
             });
         }
@@ -154,20 +161,26 @@ $(document).ready(function () {
                         $.fn.fullpage.moveTo(4);
                     });
                 } if (index === 4) {
-                    typedText('бара и ресторана', 1);
-                    typedText('дома и кухни', 0);
-                    typedText('офиса', 2);
-
-                    $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
+                    setTimeout(function () {
                         typedText('бара и ресторана', 1);
                         typedText('дома и кухни', 0);
                         typedText('офиса', 2);
+                    }, 500);
+
+                    $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
+                        setTimeout(function () {
+                            typedText('бара и ресторана', 1);
+                            typedText('дома и кухни', 0);
+                            typedText('офиса', 2);
+                        }, 500);
                     });
 
                     sliderIdealFor.on('slideChange', function () {
-                        typedText('бара и ресторана', 1);
-                        typedText('дома и кухни', 0);
-                        typedText('офиса', 2);
+                        setTimeout(function () {
+                            typedText('бара и ресторана', 1);
+                            typedText('дома и кухни', 0);
+                            typedText('офиса', 2);
+                        }, 500);
                     });
                     setTimeout(function() {
                         $('.wrap').addClass('animated fadeInUp');
@@ -262,15 +275,19 @@ $(document).ready(function () {
        $(".typed-text").text('Авторская мебель ручной работы');
 
         $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
-            typedText('бара и ресторана', 1);
-            typedText('дома и кухни', 0);
-            typedText('офиса', 2);
+            setTimeout(function () {
+                typedText('бара и ресторана', 1);
+                typedText('дома и кухни', 0);
+                typedText('офиса', 2);
+            }, 500);
         });
 
         sliderIdealFor.on('slideChange', function () {
-            typedText('бара и ресторана', 1);
-            typedText('дома и кухни', 0);
-            typedText('офиса', 2);
+            setTimeout(function () {
+                typedText('бара и ресторана', 1);
+                typedText('дома и кухни', 0);
+                typedText('офиса', 2);
+            }, 500);
         });
 
 

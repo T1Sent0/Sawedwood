@@ -121,7 +121,9 @@
 
   .map {
     width: 45%;
-    height: 85%;
+    height: inherit;
+    background: url("./img/map.png") center/cover no-repeat;
+    background-size: 100%;
   }
 }
 

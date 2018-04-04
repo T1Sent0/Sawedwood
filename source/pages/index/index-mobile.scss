@@ -367,11 +367,12 @@
     .container-information {
       background: white;
       padding: 2rem;
-      width: 70%;
+      width: 90%;
       margin-bottom: 3rem;
       margin-right: 0;
       .text-information {
         padding: 0 ;
+        word-wrap: break-word;
         p {
           font-size: 3vmax;
         }

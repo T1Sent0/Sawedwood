@@ -3952,6 +3952,15 @@ template {
     .firstPage .slider-one .swiper-slide.three-slide {
       background: url(../image/thid-image.jpg) no-repeat;
       background-size: cover; }
+    .firstPage .slider-one .swiper-slide.four-slide {
+      background: url(../image/fourth_image.jpg) no-repeat;
+      background-size: cover; }
+    .firstPage .slider-one .swiper-slide.five-slide {
+      background: url(../image/five_image.jpg) no-repeat;
+      background-size: cover; }
+    .firstPage .slider-one .swiper-slide.six-slide {
+      background: url(../image/sixth_image.jpg) no-repeat;
+      background-size: cover; }
     .firstPage .slider-one .nav div {
       background: url(../image/arrow_downe.svg) center no-repeat #cebeba;
       width: 3vmax;
@@ -4716,11 +4725,12 @@ template {
     .fivthPage .container-information {
       background: white;
       padding: 2rem;
-      width: 70%;
+      width: 90%;
       margin-bottom: 3rem;
       margin-right: 0; }
       .fivthPage .container-information .text-information {
         padding: 0;
+        word-wrap: break-word;
         text-align: left; }
         .fivthPage .container-information .text-information p {
           font-size: 3vmax; }
@@ -5777,8 +5787,14 @@ ul {
       border-color: white;
       color: white; }
   .container-page-galery .swiper-slide .container-buttom {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end; }
     .container-page-galery .swiper-slide .container-buttom .arrow {
       opacity: 0;
@@ -5786,6 +5802,7 @@ ul {
     .container-page-galery .swiper-slide .container-buttom .show-arrow {
       opacity: 0;
       position: relative;
+      -webkit-transition: .5s !important;
       transition: .5s !important;
       left: 2rem !important; }
   .container-page-galery .nav {

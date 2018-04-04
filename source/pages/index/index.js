@@ -57,6 +57,7 @@ $(document).ready(function () {
         slidesPerView: 1,
         initialSlide: 0,
         spaceBetween: 0,
+        loop: true,
         navigation: {
             nextEl: '.slider-one-button-next',
             prevEl: '.slider-one-button-prev',
@@ -65,7 +66,8 @@ $(document).ready(function () {
             el: '.swiper-pagination',
             type: 'fraction',
         },
-        slideChange: function () {}
+        slideChange: function () {},
+        slideNext: function (speed, runCallbacks) {},
     });
 
     let typedText = (text, counter) => {
@@ -81,6 +83,13 @@ $(document).ready(function () {
                 typeSpeed: 60,
                 showCursor: false,
             });
+        }
+    };
+
+    let typeSlideOne = (text, counter) => {
+        let $slideActive = $('.slider-one > .swiper-wrapper > .swiper-slide-active').data('swiper-slide-index');
+        if ($slideActive === counter) {
+            $('.typed-text').text(text)
         }
     };
 
@@ -103,42 +112,16 @@ $(document).ready(function () {
 
             afterLoad: function(anchorLink, index){
                 if(index === 1){
-                    if(sliderOne.activeIndex === 0) {
-
-                        $('.typed-text').text('Авторская мебель ручной работы')
-
-                    } else if(sliderOne.activeIndex === 1) {
-
-                        $('.typed-text').text('Собственное производство')
-
-                    } else if(sliderOne.activeIndex === 2) {
-                        $('.typed-text').text('Только натуральные материалы')
-                    }
-                    $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
-                        if(sliderOne.activeIndex === 0) {
-
-                            $('.typed-text').text('Авторская мебель ручной работы')
-
-                        } else if(sliderOne.activeIndex === 1) {
-
-                            $('.typed-text').text('Собственное производство')
-
-                        } else if(sliderOne.activeIndex === 2) {
-                            $('.typed-text').text('Только натуральные материалы')
-                        }
-                    });
+                    setInterval(function () {
+                        sliderOne.slideNext(3000);
+                    }, 2000);
                     sliderOne.on('slideChange', function () {
-                        if(sliderOne.activeIndex === 0) {
-
-                            $('.typed-text').text('Авторская мебель ручной работы')
-
-                        } else if(sliderOne.activeIndex === 1) {
-
-                            $('.typed-text').text('Собственное производство')
-
-                        } else if(sliderOne.activeIndex === 2) {
-                            $('.typed-text').text('Только натуральные материалы')
-                        }
+                        typeSlideOne('Авторская мебель ручной работы', 0);
+                        typeSlideOne('Собственное производство', 1);
+                        typeSlideOne('Только натуральные материалы', 2);
+                        typeSlideOne('Ещё какой - то текст', 3);
+                        typeSlideOne('Ещё какой - то текст2', 4);
+                        typeSlideOne('Ещё какой - то текст3', 5);
                     });
                     setTimeout(function() {
                         $('.firstPage').addClass('animated fadeInUp')
@@ -260,6 +243,7 @@ $(document).ready(function () {
             slidesPerView: 'auto',
             initialSlide: 1,
             spaceBetween: 0,
+            loop: true,
             navigation: {
                 nextEl: '.slider-one-button-next',
                 prevEl: '.slider-one-button-prev',
@@ -268,7 +252,9 @@ $(document).ready(function () {
                 el: '.swiper-pagination',
                 type: 'fraction',
             },
-        })
+            slideChange: function () {},
+            slideNext: function (speed, runCallbacks) {},
+        });
 
         $(".dynamicText").text('бара и ресторана');
 
@@ -301,14 +287,16 @@ $(document).ready(function () {
             }
         });
 
+        setInterval(function () {
+            sliderOne.slideNext(3000);
+        }, 2000);
         sliderOne.on('slideChange', function () {
-            if(sliderOne.activeIndex === 0) {
-                $('.typed-text').text('Авторская мебель ручной работы')
-            } else if(sliderOne.activeIndex === 1) {
-                $('.typed-text').text('Собственное производство')
-            } else if(sliderOne.activeIndex === 2) {
-                $('.typed-text').text('Только натуральные материалы')
-            }
+            typeSlideOne('Авторская мебель ручной работы', 0);
+            typeSlideOne('Собственное производство', 1);
+            typeSlideOne('Только натуральные материалы', 2);
+            typeSlideOne('Ещё какой - то текст', 3);
+            typeSlideOne('Ещё какой - то текст2', 4);
+            typeSlideOne('Ещё какой - то текст3', 5);
         });
     }
 

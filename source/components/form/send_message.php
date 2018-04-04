@@ -6,7 +6,7 @@ if($_POST['check'] != '') {
 } else {
     if ((isset($_POST['name']) && $_POST['name'] != '') &&
         isset($_POST['phone']) && $_POST['phone'] != '') {
-        $to = 'foregestore@gmail.com';
+        $to = 'sawedwoods@gmail.com';
         $subject = 'Сообщение от '.$_POST['name'];
         $email = $_POST['email'];
         $textMessage = $_POST['message'];

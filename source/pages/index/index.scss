@@ -184,6 +184,18 @@ body {
         background: url("./img/first-slider/thid-image.jpg") no-repeat;
         background-size: cover;
       }
+      &.four-slide {
+        background: url("./img/first-slider/fourth_image.jpg") no-repeat;
+        background-size: cover;
+      }
+      &.five-slide {
+        background: url("./img/first-slider/five_image.jpg") no-repeat;
+        background-size: cover;
+      }
+      &.six-slide {
+        background: url("./img/first-slider/sixth_image.jpg") no-repeat;
+        background-size: cover;
+      }
     }
     .nav {
       div {

@@ -148,7 +148,16 @@ body {
       height: 100%;
       span {
         font-size: 2vmax;
-        width: 70%;
+        width: 50%;
+      }
+      .typed-text {
+        width: 50%;
+        position: absolute;
+        top: 13%;
+      }
+      .container-button {
+        position: absolute;
+        bottom: 3rem;
       }
     }
     .coutter-slider {

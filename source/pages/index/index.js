@@ -57,7 +57,6 @@ $(document).ready(function () {
         slidesPerView: 1,
         initialSlide: 0,
         spaceBetween: 0,
-        loop: true,
         navigation: {
             nextEl: '.slider-one-button-next',
             prevEl: '.slider-one-button-prev',
@@ -87,8 +86,7 @@ $(document).ready(function () {
     };
 
     let typeSlideOne = (text, counter) => {
-        let $slideActive = $('.slider-one > .swiper-wrapper > .swiper-slide-active').data('swiper-slide-index');
-        if ($slideActive === counter) {
+        if (sliderOne.activeIndex === counter) {
             $('.typed-text').text(text)
         }
     };
@@ -112,16 +110,13 @@ $(document).ready(function () {
 
             afterLoad: function(anchorLink, index){
                 if(index === 1){
-                    setInterval(function () {
-                        sliderOne.slideNext(3000);
-                    }, 2000);
                     sliderOne.on('slideChange', function () {
                         typeSlideOne('Авторская мебель ручной работы', 0);
                         typeSlideOne('Собственное производство', 1);
                         typeSlideOne('Только натуральные материалы', 2);
-                        typeSlideOne('Ещё какой - то текст', 3);
-                        typeSlideOne('Ещё какой - то текст2', 4);
-                        typeSlideOne('Ещё какой - то текст3', 5);
+                        typeSlideOne('Ценные породы дерева', 3);
+                        typeSlideOne('Уникальный стиль', 4);
+                        typeSlideOne('Индивидуальный дизайн', 5);
                     });
                     setTimeout(function() {
                         $('.firstPage').addClass('animated fadeInUp')
@@ -182,9 +177,9 @@ $(document).ready(function () {
                     setTimeout(function() {
                         $('.container-page').addClass('animated fadeInUp');
                     },100);
-                    $('#first-indicators').animateNumber({ number: 60 },6000);
+                    $('#first-indicators').animateNumber({ number: 50 },6000);
                     $('#second-indicators').animateNumber({ number: 24 },6000);
-                    $('#third-indicators').animateNumber({ number: 15 },4000);
+                    $('#third-indicators').animateNumber({ number: 25 },4000);
                     $('#fourth-indicators').animateNumber({ number: 2 },4000);
                     $('.arrow-bottom').on('click', function () {
                         $.fn.fullpage.moveTo(7);
@@ -241,9 +236,8 @@ $(document).ready(function () {
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: 'auto',
-            initialSlide: 1,
+            initialSlide: 0,
             spaceBetween: 0,
-            loop: true,
             navigation: {
                 nextEl: '.slider-one-button-next',
                 prevEl: '.slider-one-button-prev',
@@ -260,6 +254,23 @@ $(document).ready(function () {
 
        $(".typed-text").text('Авторская мебель ручной работы');
 
+        sliderIdealFor.destroy();
+
+        const sliderIdealForMobile = new Swiper('.slider-two', {
+            effect: false,
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            initialSlide: 1,
+            loop: true,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: '.slider-two-button-next',
+                prevEl: '.slider-two-button-prev',
+            },
+            slideChange: function () {}
+        });
+
         $('.slider-two-button-prev, .slider-two-button-next').on('click', function () {
             setTimeout(function () {
                 typedText('бара и ресторана', 1);
@@ -268,7 +279,7 @@ $(document).ready(function () {
             }, 500);
         });
 
-        sliderIdealFor.on('slideChange', function () {
+        sliderIdealForMobile.on('slideChange', function () {
             setTimeout(function () {
                 typedText('бара и ресторана', 1);
                 typedText('дома и кухни', 0);
@@ -276,27 +287,22 @@ $(document).ready(function () {
             }, 500);
         });
 
-
         $('.slider-one-button-prev, .slider-one-button-next').on('click', function () {
-            if(sliderOne.activeIndex === 0) {
-                $('.typed-text').text('Авторская мебель ручной работы')
-            } else if(sliderOne.activeIndex === 1) {
-                $('.typed-text').text('Собственное производство')
-            } else if(sliderOne.activeIndex === 2) {
-                $('.typed-text').text('Только натуральные материалы')
-            }
+            typeSlideOne('Авторская мебель ручной работы', 0);
+            typeSlideOne('Собственное производство', 1);
+            typeSlideOne('Только натуральные материалы', 2);
+            typeSlideOne('Ценные породы дерева', 3);
+            typeSlideOne('Уникальный стиль', 4);
+            typeSlideOne('Индивидуальный дизайн', 5);
         });
 
-        setInterval(function () {
-            sliderOne.slideNext(3000);
-        }, 2000);
         sliderOne.on('slideChange', function () {
             typeSlideOne('Авторская мебель ручной работы', 0);
             typeSlideOne('Собственное производство', 1);
             typeSlideOne('Только натуральные материалы', 2);
-            typeSlideOne('Ещё какой - то текст', 3);
-            typeSlideOne('Ещё какой - то текст2', 4);
-            typeSlideOne('Ещё какой - то текст3', 5);
+            typeSlideOne('Ценные породы дерева', 3);
+            typeSlideOne('Уникальный стиль', 4);
+            typeSlideOne('Индивидуальный дизайн', 5);
         });
     }
 
@@ -325,16 +331,26 @@ $(document).ready(function () {
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
         $('.full-information-material').addClass('animated fadeInUp');
+        if (document.documentElement.clientWidth < 650) {
+            setTimeout(ss, 800);
+        }
         setTimeout(function () {
         $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
     });
+
+    function ss() {
+        $('html, body').animate({ scrollTop: $('.inform').offset().top - 100 }, 500);
+    }
 
     $('.klen').on('click', function () {
         sliderMaterial.slideTo(1, 100);
         $('.thirdPage').css({background: 'rgba(230, 230, 230, 0.55)'});
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
+        if (document.documentElement.clientWidth < 650) {
+            setTimeout(ss, 800);
+        }
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200);
@@ -346,6 +362,9 @@ $(document).ready(function () {
         $('.thirdPage').css({background: 'rgba(230, 230, 230, 0.55)'});
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
+        if (document.documentElement.clientWidth < 650) {
+            setTimeout(ss, 800);
+        }
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
@@ -357,6 +376,9 @@ $(document).ready(function () {
         $('.thirdPage').css({background: 'rgba(230, 230, 230, 0.55)'});
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
+        if (document.documentElement.clientWidth < 650) {
+            setTimeout(ss, 800);
+        }
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
@@ -368,6 +390,9 @@ $(document).ready(function () {
         $('.thirdPage').css({background: 'rgba(230, 230, 230, 0.55)'});
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
+        if (document.documentElement.clientWidth < 650) {
+            setTimeout(ss, 800);
+        }
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
@@ -379,6 +404,9 @@ $(document).ready(function () {
         $('.thirdPage').css({background: 'rgba(230, 230, 230, 0.55)'});
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
+        if (document.documentElement.clientWidth < 650) {
+            setTimeout(ss, 800);
+        }
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)
@@ -390,6 +418,9 @@ $(document).ready(function () {
         $('.thirdPage').css({background: 'rgba(230, 230, 230, 0.55)'});
         $('.wrapper').css({opacity: '1', zIndex: 1});
         $('.header, .content-slide-page-three').css({opacity: '.5'}).removeClass('animated');
+        if (document.documentElement.clientWidth < 650) {
+            setTimeout(ss, 800);
+        }
         setTimeout(function () {
             $('.full-information-material').css({opacity: 1, transition: '.5s'});
         }, 200)

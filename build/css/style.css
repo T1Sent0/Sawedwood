@@ -3927,7 +3927,14 @@ template {
       height: 100%; }
       .firstPage .container-information .text-information span {
         font-size: 2vmax;
-        width: 70%; }
+        width: 50%; }
+      .firstPage .container-information .text-information .typed-text {
+        width: 50%;
+        position: absolute;
+        top: 13%; }
+      .firstPage .container-information .text-information .container-button {
+        position: absolute;
+        bottom: 3rem; }
     .firstPage .container-information .coutter-slider {
       position: absolute;
       bottom: 0;
@@ -4491,6 +4498,7 @@ template {
       .firstPage .container-information .text-information {
         padding: 2rem;
         width: initial;
+        height: 10rem;
         text-align: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -4499,6 +4507,11 @@ template {
           font-size: 1.8rem;
           margin-bottom: 2rem;
           width: 100%; }
+        .firstPage .container-information .text-information .typed-text {
+          width: 100%;
+          top: 0; }
+        .firstPage .container-information .text-information .container-button {
+          bottom: -3rem; }
         .firstPage .container-information .text-information .container-button {
           position: relative; }
           .firstPage .container-information .text-information .container-button .arrow {
@@ -4708,18 +4721,18 @@ template {
       opacity: .5; }
     .fourthPage .wrap .swiper-slide-active {
       opacity: 1; }
-  .fourthPage .nav .slider-two-button-prev {
-    left: 5rem;
-    top: 120%;
-    z-index: 1;
-    width: 4rem;
-    height: 4rem; }
-  .fourthPage .nav .slider-two-button-next {
-    right: 5rem;
-    top: 120%;
-    z-index: 1;
-    width: 4rem;
-    height: 4rem; }
+    .fourthPage .wrap .nav div {
+      top: 92%; }
+    .fourthPage .wrap .nav .slider-two-button-prev {
+      left: 5rem;
+      z-index: 1;
+      width: 4rem;
+      height: 4rem; }
+    .fourthPage .wrap .nav .slider-two-button-next {
+      right: 5rem;
+      z-index: 1;
+      width: 4rem;
+      height: 4rem; }
   .fivthPage {
     padding-bottom: 5rem; }
     .fivthPage .container-information {
@@ -4736,7 +4749,7 @@ template {
           font-size: 3vmax; }
         .fivthPage .container-information .text-information span {
           display: block;
-          font-size: 5.5vmax;
+          font-size: 4.5vmax;
           margin-bottom: 2vmax;
           width: 100%; }
         .fivthPage .container-information .text-information h2 {
@@ -5110,7 +5123,7 @@ ul {
     display: none;
     position: absolute;
     left: 0;
-    top: 4rem;
+    top: 5rem;
     padding: .8rem 0;
     width: 100%;
     -webkit-box-orient: vertical;

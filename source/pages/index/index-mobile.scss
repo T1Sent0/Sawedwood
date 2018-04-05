@@ -62,6 +62,7 @@
       .text-information {
         padding: 2rem;
         width: initial;
+        height: 10rem;
         text-align: center;
         -webkit-box-align: center;
             -ms-flex-align: center;
@@ -70,6 +71,13 @@
           font-size: 1.8rem;
           margin-bottom: 2rem;
           width: 100%;
+        }
+        .typed-text {
+          width: 100%;
+          top: 0;
+        }
+        .container-button {
+          bottom: -3rem;
         }
         .container-button {
           position: relative;
@@ -342,24 +350,25 @@
       .swiper-slide-active {
         opacity: 1;
       }
+      .nav {
+        div {
+          top: 92%;
+        }
+        .slider-two-button-prev {
+          left: 5rem;
+          z-index: 1;
+          width: 4rem;
+          height: 4rem;
+        }
+        .slider-two-button-next {
+          right: 5rem;
+          z-index: 1;
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
 
-    }
-    .nav {
-      .slider-two-button-prev {
-        left: 5rem;
-        top: 120%;
-        z-index: 1;
-        width: 4rem;
-        height: 4rem;
-      }
-      .slider-two-button-next {
-        right: 5rem;
-        top: 120%;
-        z-index: 1;
-        width: 4rem;
-        height: 4rem;
-      }
-    }
   }
 
   .fivthPage {
@@ -378,7 +387,7 @@
         }
         span {
           display: block;
-          font-size: 5.5vmax;
+          font-size: 4.5vmax;
           margin-bottom: 2vmax;
           width: 100%;
         }

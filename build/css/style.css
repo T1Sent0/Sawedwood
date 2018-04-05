@@ -4667,7 +4667,10 @@ template {
         .thirdPage .wrapper .inform p {
           font-size: 2.1vmax; }
         .thirdPage .wrapper .inform .close {
-          top: -2vmax; }
+          top: .8vmax;
+          right: .8vmax;
+          width: 1.3rem;
+          height: 1.3rem; }
         .thirdPage .wrapper .inform .title {
           font-size: 2vmax;
           z-index: 1; }
